@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Survey Form</title>
+</head>
+<body class="bg-dark"> 
+    <header>
+
+    </header>
+    <main class="container">
+        <div class="main-header">
+            <h1 class="title" id="title">freeCodeCamp Survey Form</h1>
+            <p id="description">Thank you for taking the time to help us improve the platform</p>
+        </div>
+        <form class="bg-primary" action="#" id="survey-form">
+            <div class="form-group">
+                <label for="name" id="name-label">Name</label>
+                <input type="text" class="form-control" id="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email" id="email-label">Email</label>
+                <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="number" id="number-label">Age</label>
+                <input type="number" class="form-control" min="5" max="100" id="number" required placeholder="Enter your age">
+            </div>
+            <div class="form-group">
+                <label for="dropdown" id="dropdown-label">What is your favorite feature of freeCodeCamp</label>
+                <select class="form-control" name="dropdown" id="dropdown">
+                    <option value="">Select an option</option>
+                    <option value="challenges">Challeges</option>
+                    <option value="projects">Projects</option>
+                    <option value="community">Community</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Would you recommend freeCodeCamp to a friend ?</p>
+                <label for="radio-definitely" id="radio-label">
+                    <input type="radio" class="form-control" name="radio" id="radio-definitely" value="definitely">Definitely
+                </label>
+                <label for="radio-may-be" id="radio-label">
+                    <input type="radio" class="form-control" name="radio" id="radio-may-be" value="may-be">May be
+                </label>
+                <label for="radio-not-sure" id="radio-label">
+                    <input type="radio" class="form-control" name="radio" id="radio-not-sure" value="not-sure">Not sure
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="comment" id="comment-label">Any comment or suggestion</label>
+                <textarea class="form-control" name="comment" id="comment" rows="5" minlength="15" placeholder="Enter your comment here"></textarea>
+            </div>
+            <div class="form-group">
+                <p>What would you like to see inproved? <small>( Check all that apply )</small></p>
+                <label id="checkbox-label" for="checkbox-fep">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-fep" value="front-end projects">
+                    Front-end Projects
+                </label>
+                <label id="checkbox-label" for="checkbox-bep">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-bep" value="back-end projects">
+                    Back-end Projects
+                </label>
+                <label id="checkbox-label" for="checkbox-dv">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-dv" value="data visualization">
+                    Data Visualization 
+                </label>
+                <label id="checkbox-label" for="checkbox-chall">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-chall" value="challenges">
+                    Challenges
+                </label>
+                <label id="checkbox-label" for="checkbox-com">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-com" value="open source community">
+                    Open Source Community
+                </label>
+                <label id="checkbox-label" for="checkbox-gitter">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-gitter" value="gitter help room">
+                    Gitter help room
+                </label>
+                <label id="checkbox-label" for="checkbox-videos">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-videos" value="videos">
+                    Videos
+                </label>
+                <label id="checkbox-label" for="checkbox-meet-up">
+                    <input type="checkbox" class="" name="checkbox" id="checkbox-meet-up" value="city meet up">
+                    City Meet Up
+                </label>
+            </div>
+            <div>
+                <button class="btn btn-submit" type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+</html>

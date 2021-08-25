@@ -28,10 +28,11 @@ h1 {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: auto auto;
 }
 
 #header {
+  position: fixed;
+  z-index: 5;
   left: 0;
   top: 0;
   padding-left: 5vw;
@@ -44,6 +45,7 @@ h1 {
 .nav .nav-links {
   display: flex;
   flex-direction: column;
+  transition: all ease-in-out 200ms;
 }
 .nav-links .nav-link {
   padding-top: 15px;
@@ -52,54 +54,92 @@ h1 {
 }
 
 #main-doc {
+  position: absolute;
+  right: 0;
+  top: 0;
   padding: 0 5vw;
+  width: 63vw;
 }
 
 .main-section {
 }
-.main-section-title {
+.main-section-title h1 {
+  margin-bottom: 0;
 }
 .main-section .text {
+  line-height: 1.5;
+  font-size: 18px;
+}
+.main-section ul li {
+  margin-top: 10px;
 }
 .main-section code {
   position: relative;
   display: block;
+  font-size: 14px;
   margin: 10px;
-  padding: 15px;
+  padding-bottom: 15px;
   border-radius: 4px;
   background-color: #e8e8e8;
-  font-family: "Courier New", Courier, monospace;
-  line-height: 1.5;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.9;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
 }
 code #btn-copy {
   position: absolute;
   right: 3px;
   top: 3px;
-  color: #3886fa;
+  color: #949494;
   cursor: pointer;
 }
+code #btn-copy:hover ::after {
+  content: "Copy..";
+  position: absolute;
+  right: 0;
+  top: -40px;
+  padding: 10px 15px;
+  color: rgb(85, 85, 85);
+  font-family: Arial, Helvetica, sans-serif;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #e8e8e8;
+}
+code #btn-copy:active ::after {
+  content: "Copied..";
+}
 
-@media (max-width: 845px) {
+@media (max-width: 1200px) {
   .page-wrapper {
-    grid-template-columns: auto;
+    display: block;
   }
   #header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
     z-index: 5;
-    background-color: violet;
     height: auto;
-    padding-right: 5vw;
+    padding: 0;
+    width: 100vw;
   }
   .nav {
     position: relative;
-    z-index: 99;
+    z-index: 6;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   .nav .nav-title {
     padding: 0 !important;
+  }
+  .nav-title h1 {
+    font-size: 26px;
   }
   .nav-toggle {
     display: flex;
@@ -119,12 +159,26 @@ code #btn-copy {
     z-index: -1;
     background-color: rgb(232, 232, 232);
     top: 0;
-    left: -5vw;
+    left: -105vw;
     height: 100vh;
     width: 100vw;
     padding-top: 100px;
   }
+  .nav-links.active {
+    left: 0;
+  }
   .nav-links .nav-link {
-    padding-left: 35px;
+    padding-left: 40px;
+  }
+
+  #main-doc {
+    position: relative;
+    top: 100px;
+    padding: 0;
+    width: 100vw;
+  }
+
+  code #btn-copy:hover ::after {
+    content: "Copied..";
   }
 }

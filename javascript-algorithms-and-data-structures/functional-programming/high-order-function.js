@@ -1,6 +1,9 @@
 const squareList = (arr) => {
   // Only change code below this line
-  return arr;
+  // return arr.reduce((newArr, num) => Number.isInteger(num) && num>0?newArr.concat(num*num):newArr, []);
+
+  return arr.filter((ar) => ar > 0 && ar % 1 === 0).map((ar) => ar * ar);
+
   // Only change code above this line
 };
 
